@@ -25,7 +25,7 @@ Process
     
 Patch Needed
 ============
-keystone.token.controller.Auth에서 get_user_by_name을 호출하는 부분에서
+keystone.token.controllers.Auth에서 get_user_by_name을 호출하는 부분에서
 password도 같이 전달해 준다.
 
 그래야 사용자를 SQL에서 lookup해서 없을 경우 그 password를 이용해서 dap에서 인증하고, 여기서
@@ -49,7 +49,7 @@ in keystone.conf:
     
     [ldap_auth]
     url = ldap://localhost
-    ldap_postfix = prefix
+    ldap_postfix = @your_domain.com
     email_prefix = @your_domain.com
     default_project = default
     member_role = Member
