@@ -17,7 +17,7 @@ config.register_str('member_role', group='ldap_auth', default='Member')
 
 class Identity(sql.Identity):
     def _check_ldap_password(self, username, password):
-        url = CONF.ldap.url
+        url = CONF.ldap_auth.url
         conn = ldap.initialize(url)
         conn.protocol_version = ldap.VERSION3
         try:
